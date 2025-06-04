@@ -1,10 +1,10 @@
-import {axiosInstance} from '../apicalls/axios'
+import axios from "axios";
  
 
 //Register a new user:
 export const RegisterUser = async (payload) =>{
     try{
-        const response = await axiosInstance.post("/api/users/register", payload);
+        const response = await axios.post("http://localhost:3000/api/users/register", payload);
         return response.data;
     }catch(error){
         return error.response;
@@ -15,7 +15,7 @@ export const RegisterUser = async (payload) =>{
 //Login a user:
 export const LoginUser = async (payload)=>{
     try{
-        const response = await axiosInstance.post("/api/users/login", payload);
+        const response = await axios.post("http://localhost:3000/api/users/login", payload);
         return response.data;
     }catch(error){
         return error.response;
@@ -26,17 +26,20 @@ export const LoginUser = async (payload)=>{
 
 //Get Current User:
 export const fetchCurrentUser = async () => {
-    const token = localStorage.getItem("token"); 
-    if (!token) {
-     throw new Error("No token found");
-   }
-  
-    const response = await axiosInstance.get("/api/users/get-current-user", {
+
+    try{
+  const token = localStorage.getItem("token"); 
+  const response = await axios.get("http://localhost:3000/api/users/get-current-user", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
   
     return response.data;
-  };
+  }
+    catch (error) {
+    return error.response;
+
+
+    }}
   
