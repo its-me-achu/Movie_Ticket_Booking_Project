@@ -4,7 +4,7 @@ import axios from "axios";
 //Register a new user:
 export const RegisterUser = async (payload) =>{
     try{
-        const response = await axios.post("http://localhost:3000/api/users/register", payload);
+        const response = await axios.post("https://movie-arr.netlify.app/api/users/register", payload);
         return response.data;
     }catch(error){
         return error.response;
@@ -15,7 +15,7 @@ export const RegisterUser = async (payload) =>{
 //Login a user:
 export const LoginUser = async (payload)=>{
     try{
-        const response = await axios.post("http://localhost:3000/api/users/login", payload);
+        const response = await axios.post("https://movie-arr.netlify.app/api/users/login", payload);
         return response.data;
     }catch(error){
         return error.response;
@@ -29,7 +29,7 @@ export const fetchCurrentUser = async () => {
 
     try{
   const token = localStorage.getItem("token"); 
-  const response = await axios.get("http://localhost:3000/api/users/get-current-user", {
+  const response = await axios.get("https://movie-arr.netlify.app/api/users/get-current-user", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

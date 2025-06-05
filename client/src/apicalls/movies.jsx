@@ -8,7 +8,7 @@ export const AddMovie = async (payload) =>{
    console.log(payload);
     try{
         const token = localStorage.getItem("token"); 
-        const response = await axios.post("http://localhost:3000/api/movies/add-movies",payload, {
+        const response = await axios.post("https://movie-arr.netlify.app/api/movies/add-movies",payload, {
             headers: {
                 Authorization: `Bearer ${token}`,
               }
@@ -24,7 +24,7 @@ export  const GetAllMovies = async ()=>{
  
     try{
         const token = localStorage.getItem("token");
-             const response = await axios.get("http://localhost:3000/api/movies/get-all-movies",{
+             const response = await axios.get("https://movie-arr.netlify.app/api/movies/get-all-movies",{
                 headers: {
                     Authorization: `Bearer ${token}`,
                   }
@@ -41,7 +41,7 @@ export const UpdateMovie = async(payload)=>{
 
     try{
         const token = localStorage.getItem("token");
-        const response = await axios.post("http://localhost:3000/api/movies/update-movie",payload ,{
+        const response = await axios.post("https://movie-arr.netlify.app/api/movies/update-movie",payload ,{
            headers: {
                Authorization: `Bearer ${token}`,
              }
@@ -60,7 +60,7 @@ console.log(payload);
     try{
 
         const token = localStorage.getItem("token");
-        const response = await axios.delete(`http://localhost:3000/api/movies/delete-movie/${payload}`, {
+        const response = await axios.delete(`https://movie-arr.netlify.app/api/movies/delete-movie/${payload}`, {
     
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ catch(error){
 export const GetMovieById = async (id)=>{
     try{
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:3000/api/movies/get-movie-by-id/${id}`, {
+        const response = await axios.get(`https://movie-arr.netlify.app/api/movies/get-movie-by-id/${id}`, {
     
             headers: {
                 Authorization: `Bearer ${token}`,

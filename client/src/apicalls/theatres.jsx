@@ -6,7 +6,7 @@ export const AddTheatres = async (payload) =>{
     try{
         const token = localStorage.getItem("token"); 
        
-        const response = await axios.post("http://localhost:3000/api/theatres/add-theatres",payload, {
+        const response = await axios.post("https://movie-arr.netlify.app/api/theatres/add-theatres",payload, {
             headers: {
                 Authorization: `Bearer ${token}`,
               }
@@ -22,7 +22,7 @@ export  const GetAllTheatres = async ()=>{
  
     try{
         const token = localStorage.getItem("token");
-             const response = await axios.get("http://localhost:3000/api/theatres/get-all-theatres",{
+             const response = await axios.get("https://movie-arr.netlify.app/api/theatres/get-all-theatres",{
                 headers: {
                     Authorization: `Bearer ${token}`,
                   }
@@ -38,7 +38,7 @@ export  const GetAllTheatresByOwner = async (payload)=>{
  
     try{
         const token = localStorage.getItem("token");
-       const response = await axios.post(`http://localhost:3000/api/theatres/get-all-theatres-by-owner`,payload,{
+       const response = await axios.post(`https://movie-arr.netlify.app/api/theatres/get-all-theatres-by-owner`,payload,{
                 headers: {
                     Authorization: `Bearer ${token}`,
                   }
@@ -53,7 +53,7 @@ export  const GetAllTheatresByOwner = async (payload)=>{
 export const UpdateTheatre = async (payload)=>{
      try{
         const token = localStorage.getItem("token");
-             const response = await axios.post("http://localhost:3000/api/theatres/update-theatre",payload,{
+             const response = await axios.post("https://movie-arr.netlify.app/api/theatres/update-theatre",payload,{
                 headers: {
                     Authorization: `Bearer ${token}`,
                   }
@@ -69,7 +69,7 @@ export const DeleteTheatre = async(payload)=>{
     console.log(payload);
        try{
         const token = localStorage.getItem("token");
-             const response = await axios.delete(`http://localhost:3000/api/theatres/delete-theatre/${payload}`,{
+             const response = await axios.delete(`https://movie-arr.netlify.app/api/theatres/delete-theatre/${payload}`,{
                 headers: {
                     Authorization: `Bearer ${token}`,
                   }
@@ -85,7 +85,7 @@ export const AddShow = async (payload) =>{
     try{
         const token = localStorage.getItem("token"); 
        
-        const response = await axios.post("http://localhost:3000/api/theatres/add-show",payload, {
+        const response = await axios.post("https://movie-arr.netlify.app/api/theatres/add-show",payload, {
             headers: {
                 Authorization: `Bearer ${token}`,
               }
@@ -99,7 +99,7 @@ export const AddShow = async (payload) =>{
 export const GetAllShowsByTheatre = async ({ theatreId }) => {
   try {
      const token = localStorage.getItem("token");
-    const response = await axios.get(`http://localhost:3000/api/theatres/${theatreId}/shows`,{
+    const response = await axios.get(`https://movie-arr.netlify.app/api/theatres/${theatreId}/shows`,{
      headers: {
                     Authorization: `Bearer ${token}`,
                  }
@@ -114,7 +114,7 @@ export const DeleteShow = async(payload)=>{
     console.log(payload);
        try{
         const token = localStorage.getItem("token");
-             const response = await axios.delete(`http://localhost:3000/api/theatres/delete-show/${payload}`,{
+             const response = await axios.delete(`https://movie-arr.netlify.app/api/theatres/delete-show/${payload}`,{
                 headers: {
                     Authorization: `Bearer ${token}`,
                   }
@@ -129,7 +129,7 @@ export const DeleteShow = async(payload)=>{
 export const GetAllTheatresByMovie = async (payload) => {
   try {
     const token = localStorage.getItem("token");
-    const response = await axios.get(`http://localhost:3000/api/theatres/get-all-theatres-by-movie`,  {
+    const response = await axios.get(`https://movie-arr.netlify.app/api/theatres/get-all-theatres-by-movie`,  {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -149,7 +149,7 @@ export const GetShowById = async (payload) => {
     console.log("Payload in GetShowById:", payload);
   try {
     const token = localStorage.getItem("token");
-    const response = await axios.post("http://localhost:3000/api/theatres/get-show-by-id", payload, {
+    const response = await axios.post("https://movie-arr.netlify.app/api/theatres/get-show-by-id", payload, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
