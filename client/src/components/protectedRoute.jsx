@@ -40,7 +40,6 @@ const ProtectedRoute = ({children}) => {
 <h1 className="text-2xl text-white cursor-pointer"
 onClick={()=>navigate("/")}>AARA MOVIES</h1>
 </div>
-
       <div className="bg-white p-1 flex gap-1"> 
        <i className="ri-shield-user-line"></i>
         <h1 className="text-sm underline"
