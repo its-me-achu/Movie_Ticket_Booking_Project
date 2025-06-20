@@ -4,7 +4,7 @@ import axios from 'axios';
     headers: {
      'Content-Type': 'application/json',
     },
-    baseURL: "http://localhost:3000/api"
+    baseURL: "https://arr-movie-ticket-booking.onrender.com/api"
 
  });
 
