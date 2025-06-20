@@ -1,10 +1,11 @@
-import axios from 'axios';
+//import axios from 'axios';
+import{axiosInstance}  from './axios';
 
 //Make Payment:
 export const MakePayment = async (tokens, amount) => {
     try {
         const token = localStorage.getItem("token");
-        const response = await axios.post("https://movie-arr.netlify.app/api/bookings/make-payment", {
+        const response = await axiosInstance.post("/bookings/make-payment", {
             tokens,
             amount
         } ,{
@@ -22,7 +23,7 @@ export const MakePayment = async (tokens, amount) => {
 export const BookShowTickets = async (bookingData) => {
     try {
         const token = localStorage.getItem("token");
-        const response = await axios.post("https://movie-arr.netlify.app/api/bookings/book-show", bookingData, {
+        const response = await axiosInstance.post("/bookings/book-show", bookingData, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -37,7 +38,7 @@ export const BookShowTickets = async (bookingData) => {
 export const GetBookings = async () => {
     try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("https://movie-arr.netlify.app/api/bookings/get-booking", {
+        const response = await axiosInstance.get("/bookings/get-booking", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

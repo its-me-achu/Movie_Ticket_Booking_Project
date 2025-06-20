@@ -20,6 +20,7 @@ const ProtectedRoute = ({children}) => {
       } catch (error) {
        dispatch(HideLoading());
         console.error("Failed to fetch user", error);
+        
         localStorage.removeItem("token");
         navigate("/login");
       }

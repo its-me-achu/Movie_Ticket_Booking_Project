@@ -13,8 +13,8 @@ function Login() {
       try{
        dispatch(ShowLoading());
         const response = await LoginUser(values);
+        console.log("Login API Response =>", response);
        dispatch(HideLoading());
-       console.log(response);
           if(response){
             message.success(response.message);
             localStorage.setItem("token", response.token);
